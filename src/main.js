@@ -13,7 +13,7 @@ const images = [
   "images/포트폴리오-page1.png",
   "images/포트폴리오-page4 최종.png",
   "images/포트폴리오-page6(민정미)-최종.png",
-  "images/포트폴리오-page30(WEB).png"
+  "images/포트폴리오-page30(WEB).png",
 ];
 let current = 0;
 
@@ -24,7 +24,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const rightBtn = document.querySelector(".right-btn");
 
   function showImage(idx) {
-    sliderImage.src = images[idx];
+    // 페이드 아웃
+    sliderImage.classList.add("fade-out");
+    setTimeout(() => {
+      sliderImage.src = images[idx];
+      // 이미지가 바뀐 후 페이드 인
+      sliderImage.classList.remove("fade-out");
+      sliderImage.classList.add("fade-in");
+      setTimeout(() => {
+        sliderImage.classList.remove("fade-in");
+      }, 300);
+    }, 300);
   }
 
   leftBtn.addEventListener("click", () => {

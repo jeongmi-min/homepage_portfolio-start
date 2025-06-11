@@ -85,8 +85,9 @@ header {
 
 .menu-ul {
   margin: 1em;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
+
 .menu-ul li {
   margin: 2em;
 }
@@ -113,6 +114,7 @@ header {
   justify-content: flex-start;
   background: #fff;
   padding: 0;
+  overflow: hidden;
 }
 
 .slider-btn-group {
@@ -151,6 +153,90 @@ header {
   box-shadow: none;
   display: block;
   margin: 0;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+#slider-image.fade-out {
+  opacity: 0;
+}
+
+#slider-image.fade-in {
+  opacity: 1;
+}
+
+/* <article-main-profile> */
+article {
+  margin: 0 auto;
+  padding: 2em;
+}
+
+#main-profile {
+  display: grid;
+  grid-template-columns: 0.2fr 5fr 0.2fr;
+  grid-template-rows: 0.5fr 2fr 1.5fr;
+  margin: 2em auto;
+}
+
+#main-profile h2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #434343;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: black;
+}
+.menu-link:hover {
+  color: #963956;
+  text-decoration: underline;
+  text-decoration-color: #963956;
+  text-underline-offset: 0.2em;
+}
+
+#profile-img {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 augo;
+}
+
+#profile-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 1px solid #434343;
+  box-shadow: 0 0 10px rgba(150, 57, 86, 0.5);
+}
+.profile-text {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  margin: 0.5em 0;
+}
+.profile-text p {
+  font-size: 1.2rem;
+  color: black;
+  margin: 0.5em 0;
+  line-height: 1.5;
 }
 
 @media (min-width: 960px) {
@@ -181,6 +267,7 @@ header {
     align-items: center;
     list-style: none;
     margin: 0;
+    font-size: 1.2rem;
   }
   .menu-a {
     color: rgb(255, 255, 255);
@@ -204,5 +291,13 @@ header {
   #menubar-button:active {
     background-color: #81c147;
     color: black;
+  }
+
+  /* <article-main-profile> */
+
+  #main-profile {
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 3fr 0.2fr;
+    grid-template-rows: 0.5fr 1.5fr;
   }
 }
