@@ -49,4 +49,39 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 초기 이미지 세팅
   showImage(current);
+
+  // 마케팅 슬라이더
+  const marketingInner = document.querySelector(".marketing-slider-inner");
+  const marketingSlides = document.querySelectorAll(".marketing-slide");
+  const marketingLeftBtn = document.querySelector(".marketing-left-btn");
+  const marketingRightBtn = document.querySelector(".marketing-right-btn");
+  let marketingCurrent = 0;
+  const marketingTotal = marketingSlides.length;
+
+  // 각 slide의 실제 width를 구함 (padding, margin 포함)
+  function getSlideWidth() {
+    return (
+      marketingSlides[0].offsetWidth +
+      parseInt(getComputedStyle(marketingSlides[0]).marginRight || 0)
+    );
+  }
+
+  function updateMarketingSlider() {
+    const slideWidth = getSlideWidth();
+    marketingInner.style.transform = `translateX(-${
+      marketingCurrent * slideWidth
+    }px)`;
+  }
+
+  marketingLeftBtn.addEventListener("click", () => {
+    marketingCurrent = (marketingCurrent - 1 + marketingTotal) % marketingTotal;
+    updateMarketingSlider();
+  });
+
+  marketingRightBtn.addEventListener("click", () => {
+    marketingCurrent = (marketingCurrent + 1) % marketingTotal;
+    updateMarketingSlider();
+  });
+
+  updateMarketingSlider();
 });

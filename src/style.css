@@ -241,16 +241,51 @@ article {
 
 /* <article-marketing plan> */
 
-article.marketing-plan {
-  margin: 0 auto;
-  padding: 2em;
+#main-marketing {
+  display: grid;
+  grid-template-columns: 0.2fr 300px 2fr 0.2fr;
+  grid-template-rows: 0.5fr 2fr;
+  margin: 2em auto;
+}
+
+#main-marketing h2 {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #434343;
+  margin-bottom: 1em;
+
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.marketing-slider {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  position: relative;
+  width: 100%;
+  z-index: 3;
 }
 
 .marketing-slider-inner {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
   display: flex;
   flex-direction: row;
-  justify-content: start;
   align-items: center;
+  scroll-behavior: smooth;
+}
+
+.marketing-slider-inner::-webkit-scrollbar {
+  display: none; /* 스크롤바 숨기기 */
 }
 .marketing-slide {
   display: flex;
@@ -258,6 +293,8 @@ article.marketing-plan {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 542px;
+  margin-right: 2em;
 }
 
 .marketing-slide img {
@@ -272,6 +309,34 @@ article.marketing-plan {
   color: black;
   margin: 0.3em 0;
   line-height: 1.5;
+}
+
+.marketing-slider-btn-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 버튼을 세로 가운데 정렬 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 2em;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.marketing-slider-btn {
+  background: rgb(66, 66, 66, 0.3);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3em 0.7em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  pointer-events: auto;
+  z-index: 10;
 }
 
 @media (min-width: 960px) {
@@ -352,7 +417,6 @@ article.marketing-plan {
     display: flex;
     justify-content: start;
     align-items: center;
-    margin: 0 augo;
   }
 
   #profile-image {
