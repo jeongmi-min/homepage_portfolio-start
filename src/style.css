@@ -285,9 +285,11 @@ article {
   scroll-behavior: smooth;
 }
 
-.marketing-slider-inner::-webkit-scrollbar {
-  display: none; /* 스크롤바 숨기기 */
-}
+/* 스크롤바 숨기기 */
+/* .marketing-slider-inner::-webkit-scrollbar {
+  display: none; 
+} */
+
 .marketing-slide {
   display: flex;
   flex-direction: column;
@@ -385,9 +387,11 @@ article {
   scroll-behavior: smooth;
 }
 
-.branding-slider-inner::-webkit-scrollbar {
-  display: none; /* 스크롤바 숨기기 */
-}
+/* 스크롤바 숨기기 */
+/* .branding-slider-inner::-webkit-scrollbar {
+  display: none; 
+} */
+
 .branding-slide {
   display: flex;
   flex-direction: column;
@@ -485,9 +489,10 @@ article {
   scroll-behavior: smooth;
 }
 
-.web-slider-inner::-webkit-scrollbar {
-  display: none; /* 스크롤바 숨기기 */
-}
+/* 스크롤바 숨기기 */
+/* .web-slider-inner::-webkit-scrollbar {
+  display: none; 
+} */
 
 .web-slide {
   display: flex;
