@@ -58,8 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let marketingCurrent = 0;
   const marketingTotal = marketingSlides.length;
 
-  // 각 slide의 실제 width를 구함 (padding, margin 포함)
-  function getSlideWidth() {
+  function getMarketingSlideWidth() {
     return (
       marketingSlides[0].offsetWidth +
       parseInt(getComputedStyle(marketingSlides[0]).marginRight || 0)
@@ -67,7 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateMarketingSlider() {
-    const slideWidth = getSlideWidth();
+    const slideWidth = getMarketingSlideWidth();
     marketingInner.style.transform = `translateX(-${
       marketingCurrent * slideWidth
     }px)`;
@@ -84,4 +83,38 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   updateMarketingSlider();
+
+  // 브랜딩 슬라이더
+  const brandingInner = document.querySelector(".branding-slider-inner");
+  const brandingSlides = document.querySelectorAll(".branding-slide");
+  const brandingLeftBtn = document.querySelector(".branding-left-btn");
+  const brandingRightBtn = document.querySelector(".branding-right-btn");
+  let brandingCurrent = 0;
+  const brandingTotal = brandingSlides.length;
+
+  function getBrandingSlideWidth() {
+    return (
+      brandingSlides[0].offsetWidth +
+      parseInt(getComputedStyle(brandingSlides[0]).marginRight || 0)
+    );
+  }
+
+  function updateBrandingSlider() {
+    const slideWidth = getBrandingSlideWidth();
+    const gap = 2;
+    const moveAmout = (slideWidth + gap) * brandingCurrent;
+    brandingInner.style.transform = `translateX(-${moveAmout}px)`;
+  }
+
+  brandingLeftBtn.addEventListener("click", () => {
+    brandingCurrent = (brandingCurrent - 1 + brandingTotal) % brandingTotal;
+    updateBrandingSlider();
+  });
+
+  brandingRightBtn.addEventListener("click", () => {
+    brandingCurrent = (brandingCurrent + 1) % brandingTotal;
+    updateBrandingSlider();
+  });
+
+  updateBrandingSlider();
 });
