@@ -805,8 +805,9 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-self: center;
+    margin: 0;
 
-    gap: 10em;
+    gap: 3em;
   }
 
   .web-start-page {
