@@ -150,3 +150,70 @@ window.addEventListener("DOMContentLoaded", () => {
 
   updateWebSlider();
 });
+
+// <desktop>
+
+const desktopOpen = document.querySelector(".desktop-open-btn");
+const desktopMenu = document.querySelector(".desktop-menu");
+const desktopClose = document.querySelector(".desktop-close-btn");
+desktopOpen.addEventListener("click", () => {
+  desktopMenu.classList.add("move");
+});
+desktopClose.addEventListener("click", () => {
+  desktopMenu.classList.remove("move");
+});
+
+const slideContainer = document.getElementById("slide-container");
+
+const firstBt = document.getElementById("first-button");
+const secondBt = document.getElementById("second-button");
+const thirdBt = document.getElementById("third-button");
+const fourthBt = document.getElementById("fourth-button");
+
+const desktopFooter = document.getElementById("desktop-footer");
+
+firstBt.addEventListener("click", () => {
+  slideContainer.style.transform = "translateY(0)";
+});
+
+secondBt.addEventListener("click", () => {
+  moveToSlide(1);
+});
+
+thirdBt.addEventListener("click", () => {
+  moveToSlide(2);
+});
+
+fourthBt.addEventListener("click", () => {
+  moveToSlide(3);
+});
+
+let desktopCurrent = 0;
+let totalSlides = 4;
+
+function moveToSlide(index) {
+  desktopCurrent = index;
+  slideContainer.style.transform = `translateY(-${desktopCurrent * 100}vh)`;
+
+  if (desktopCurrent === totalSlides - 1) {
+    desktopFooter.style.display = "block";
+  } else {
+    desktopFooter.style.display = "none";
+  }
+}
+
+window.addEventListener("wheel", function (e) {
+  if (e.deltaY > 0 && desktopCurrent < 3) {
+    moveToSlide(desktopCurrent + 1);
+  } else if (e.deltaY < 0 && desktopCurrent > 0) {
+    moveToSlide(desktopCurrent - 1);
+  }
+});
+
+window.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowDown" && desktopCurrent < 3) {
+    moveToSlide(desktopCurrent + 1);
+  } else if (e.key === "ArrowUp" && desktopCurrent > 0) {
+    moveToSlide(current - 1);
+  }
+});
