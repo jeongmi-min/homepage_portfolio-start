@@ -676,7 +676,7 @@ footer {
   display: none;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .open-btn,
   .close-btn {
     display: none;
@@ -827,7 +827,7 @@ footer {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
   #mobile {
     display: none;
   }
@@ -1000,9 +1000,64 @@ footer {
   }
 
   #main-content-four {
+    width: 100%;
+    height: 100vh;
     background: #ffe0e5;
+    color: black;
   }
 
+  #desktop-login-background {
+    padding-top: 5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+
+    gap: 5em;
+  }
+
+  .desktop-web-start-page {
+    width: 576px;
+    height: 324px;
+    object-fit: cover;
+
+    margin-top: 5em;
+  }
+
+  .desktop-login-title2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .desktop-login-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: start;
+    margin-top: 2em;
+
+    font-size: 1rem;
+    gap: 1em;
+  }
+
+  .desktop-login-page-btn {
+    width: 384px;
+    height: 40px;
+    background: #ffbfcc;
+
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(150, 57, 86, 0.5);
+
+    margin-top: 1em;
+  }
   /* <desktop-footer> */
 
   #desktop-footer {
@@ -1012,7 +1067,7 @@ footer {
     background: #434343;
     height: 30%;
     width: 100%;
-    z-index: 2;
+    z-index: 200;
 
     display: flex;
     flex-direction: column;
@@ -1022,7 +1077,7 @@ footer {
   }
 
   .footer-desktop-menu {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 4em;
   }
 
@@ -1055,7 +1110,7 @@ footer {
     margin: 1em;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1600px) {
     .desktop-open-btn,
     .desktop-close-btn {
       display: none;
