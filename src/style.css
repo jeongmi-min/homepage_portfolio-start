@@ -31,10 +31,12 @@ header {
   height: 4em;
 }
 
+.menu-logo,
 .logo {
   font-weight: 800;
   font-size: 1.3rem;
   color: white;
+  text-decoration: none;
 }
 
 .headerbar-logo {
@@ -502,6 +504,9 @@ article {
   text-align: center;
   width: 300px;
   margin-right: 5em;
+
+  scroll-snap-align: start;
+  flex: 0 0 auto;
 }
 
 .web-slide img {

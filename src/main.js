@@ -51,104 +51,86 @@ window.addEventListener("DOMContentLoaded", () => {
   showImage(current);
 
   // 마케팅 슬라이더
-  const marketingInner = document.querySelector(".marketing-slider-inner");
-  const marketingSlides = document.querySelectorAll(".marketing-slide");
-  const marketingLeftBtn = document.querySelector(".marketing-left-btn");
-  const marketingRightBtn = document.querySelector(".marketing-right-btn");
-  let marketingCurrent = 0;
-  const marketingTotal = marketingSlides.length;
+const marketingInner = document.querySelector(".marketing-slider-inner");
+const marketingSlides = document.querySelectorAll(".marketing-slide");
+const marketingLeftBtn = document.querySelector(".marketing-left-btn");
+const marketingRightBtn = document.querySelector(".marketing-right-btn");
 
-  function getMarketingSlideWidth() {
-    return (
-      marketingSlides[0].offsetWidth +
-      parseInt(getComputedStyle(marketingSlides[0]).marginRight || 0)
-    );
-  }
+let marketingCurrent = 0; 
+const marketingTotal = marketingSlides.length;
 
-  function updateMarketingSlider() {
-    const slideWidth = getMarketingSlideWidth();
-    marketingInner.style.transform = `translateX(-${
-      marketingCurrent * slideWidth
-    }px)`;
-  }
-
-  marketingLeftBtn.addEventListener("click", () => {
-    marketingCurrent = (marketingCurrent - 1 + marketingTotal) % marketingTotal;
-    updateMarketingSlider();
+function scrollMarketingTo(index) {
+  marketingCurrent = (index + marketingTotal) % marketingTotal; // 순환
+  marketingSlides[marketingCurrent].scrollIntoView({
+    behavior: "smooth",
+    inline: "start",
+    block: "nearest",
   });
+}
 
-  marketingRightBtn.addEventListener("click", () => {
-    marketingCurrent = (marketingCurrent + 1) % marketingTotal;
-    updateMarketingSlider();
-  });
+marketingLeftBtn.addEventListener("click", () => {
+  scrollMarketingTo(marketingCurrent - 1);
+});
 
-  updateMarketingSlider();
+marketingRightBtn.addEventListener("click", () => {
+  scrollMarketingTo(marketingCurrent + 1);
+});
+
 
   // 브랜딩 슬라이더
-  const brandingInner = document.querySelector(".branding-slider-inner");
-  const brandingSlides = document.querySelectorAll(".branding-slide");
-  const brandingLeftBtn = document.querySelector(".branding-left-btn");
-  const brandingRightBtn = document.querySelector(".branding-right-btn");
-  let brandingCurrent = 0;
-  const brandingTotal = brandingSlides.length;
+const brandingInner = document.querySelector(".branding-slider-inner");
+const brandingSlides = document.querySelectorAll(".branding-slide");
+const brandingLeftBtn = document.querySelector(".branding-left-btn");
+const brandingRightBtn = document.querySelector(".branding-right-btn");
 
-  function getBrandingSlideWidth() {
-    return (
-      brandingSlides[0].offsetWidth +
-      parseInt(getComputedStyle(brandingSlides[0]).marginRight || 0)
-    );
-  }
+let brandingCurrent = 0; // 현재 슬라이드 인덱스
+const brandingTotal = brandingSlides.length;
 
-  function updateBrandingSlider() {
-    const slideWidth = getBrandingSlideWidth();
-    const gap = 2;
-    const moveAmout = (slideWidth + gap) * brandingCurrent;
-    brandingInner.style.transform = `translateX(-${moveAmout}px)`;
-  }
-
-  brandingLeftBtn.addEventListener("click", () => {
-    brandingCurrent = (brandingCurrent - 1 + brandingTotal) % brandingTotal;
-    updateBrandingSlider();
+// 지정한 인덱스 슬라이드로 이동 (순환)
+function scrollBrandingTo(index) {
+  brandingCurrent = (index + brandingTotal) % brandingTotal; // 순환
+  brandingSlides[brandingCurrent].scrollIntoView({
+    behavior: "smooth",
+    inline: "start",
+    block: "nearest",
   });
+}
 
-  brandingRightBtn.addEventListener("click", () => {
-    brandingCurrent = (brandingCurrent + 1) % brandingTotal;
-    updateBrandingSlider();
+// 버튼 이벤트
+brandingLeftBtn.addEventListener("click", () => {
+  scrollBrandingTo(brandingCurrent - 1);
+});
+
+brandingRightBtn.addEventListener("click", () => {
+  scrollBrandingTo(brandingCurrent + 1);
+});
+
+
+// --- 웹 슬라이더 ---
+const webInner = document.querySelector(".web-slider-inner");
+const webSlides = Array.from(document.querySelectorAll(".web-slide"));
+const webLeftBtn = document.querySelector(".web-left-btn");
+const webRightBtn = document.querySelector(".web-right-btn");
+
+let webCurrent = 0;
+const webTotal = webSlides.length;
+
+function scrollToSlide(index) {
+  webCurrent = (index + webTotal) % webTotal;
+  webSlides[webCurrent].scrollIntoView({
+    behavior: "smooth",
+    inline: "start",
+    block: "nearest",
   });
+}
 
-  updateBrandingSlider();
+webLeftBtn.addEventListener("click", () => {
+  scrollToSlide(webCurrent - 1);
+});
 
-  // 웹 슬라이더
-  const webInner = document.querySelector(".web-slider-inner");
-  const webSlides = document.querySelectorAll(".web-slide");
-  const webLeftBtn = document.querySelector(".web-left-btn");
-  const webRightBtn = document.querySelector(".web-right-btn");
-  let webCurrent = 0;
-  const webTotal = webSlides.length;
-
-  function getWebSlideWidth() {
-    return (
-      webSlides[0].offsetWidth +
-      parseInt(getComputedStyle(webSlides[0]).marginRight || 0)
-    );
-  }
-
-  function updateWebSlider() {
-    const slideWidth = getWebSlideWidth();
-    webInner.style.transform = `translateX(-${webCurrent * slideWidth}px)`;
-  }
-
-  webLeftBtn.addEventListener("click", () => {
-    webCurrent = (webCurrent - 1 + webTotal) % webTotal;
-    updateWebSlider();
-  });
-
-  webRightBtn.addEventListener("click", () => {
-    webCurrent = (webCurrent + 1) % webTotal;
-    updateWebSlider();
-  });
-
-  updateWebSlider();
+webRightBtn.addEventListener("click", () => {
+  scrollToSlide(webCurrent + 1);
+});
 });
 
 // <desktop>
