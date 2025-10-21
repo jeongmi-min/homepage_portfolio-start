@@ -126,6 +126,8 @@ header {
   z-index: -1;
 }
 
+/* <article-profile-image> */
+
 @media (min-width: 1500px) {
   .open-btn,
   .close-btn {
