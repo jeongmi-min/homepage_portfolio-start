@@ -219,6 +219,7 @@ article {
   border: 1px solid #434343;
   box-shadow: 0 0 10px rgba(150, 57, 86, 0.5);
 }
+
 .profile-text {
   grid-column: 2/3;
   grid-row: 3/4;
