@@ -247,7 +247,7 @@ header {
   margin-bottom: 1rem;
 }
 
-#profile-education-content li p {
+.year-info {
   margin-left: 2rem;
 }
 
@@ -278,10 +278,6 @@ header {
   margin-bottom: 1rem;
 }
 
-#profile-certificate-content li p {
-  margin-left: 2rem;
-}
-
 /* <article-profile-experience> */
 #profile-experience {
   display: flex;
@@ -307,10 +303,6 @@ header {
 
   font-size: 1.1rem;
   margin-bottom: 1rem;
-}
-
-#profile-experience-content li p {
-  margin-left: 2rem;
 }
 
 .work-logo {
@@ -347,10 +339,6 @@ header {
 
   font-size: 1.1rem;
   margin-bottom: 1rem;
-}
-
-#profile-award-content li p {
-  margin-left: 2rem;
 }
 
 /* <article-profile-skills> */
@@ -473,5 +461,35 @@ footer {
   /* <profile-container> */
   .line {
     display: none;
+  }
+
+  #profile-content {
+    display: grid;
+    grid-template-columns: 0.3fr 1.4fr 2fr 0.3fr;
+    grid-template-rows: auto;
+  }
+
+  #profile-content-one {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #profile-content-two {
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #profile-information,
+  #profile-education,
+  #profile-certificate,
+  #profile-experience,
+  #profile-award,
+  #profile-skills {
+    align-items: start;
+    text-align: start;
   }
 }
