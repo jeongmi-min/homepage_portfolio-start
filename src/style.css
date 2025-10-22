@@ -707,7 +707,7 @@ footer {
   display: none;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .open-btn,
   .close-btn {
     display: none;
@@ -771,6 +771,7 @@ footer {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
   }
+
   #menubar-button:hover,
   #menubar-button:active {
     color: #fff;
@@ -959,6 +960,11 @@ footer {
     font-size: 2.5rem;
   }
 
+  .desktop-open-btn:hover,
+  .desktop-close-btn:hover {
+    color: #ffbfcc;
+  }
+
   .desktop-menu-ul {
     margin: 2em;
     font-size: 1.4rem;
@@ -970,6 +976,11 @@ footer {
     text-decoration: none;
     color: white;
   }
+
+  .desktop-menu-a:hover {
+    color: #ffbfcc;
+  }
+
   .move {
     transform: translateX(20%);
     transition: 250ms ease;
@@ -993,7 +1004,7 @@ footer {
     height: 15px;
   }
 
-  button:hover {
+  .circle-button:hover {
     background: #ffc0cb;
   }
 
@@ -1159,7 +1170,7 @@ footer {
     margin: 1em;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1450px) {
     .desktop-open-btn,
     .desktop-close-btn {
       display: none;
@@ -1197,6 +1208,11 @@ footer {
       color: rgb(255, 255, 255);
       display: flex;
     }
+
+    .desktop-menu-a:hover {
+      color: #ffbfcc;
+    }
+
     #desktop-menubar-button:link,
     #desktop-menubar-button:visited {
       display: block;
@@ -1212,8 +1228,11 @@ footer {
       background-color: rgb(255, 255, 255);
       color: rgb(0, 0, 0);
     }
+
+    #desktop-menubar-button:hover,
     #desktop-menubar-button:active {
-      color: black;
+      color: #fff;
+      background: #ffbfcc;
     }
   }
 }

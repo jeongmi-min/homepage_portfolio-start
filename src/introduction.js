@@ -8,7 +8,7 @@ close.addEventListener("click", () => {
   menu.classList.remove("move");
 });
 
-const canvas = document.getElementById("hexChart");
+const canvas = document.getElementById("profile-skills-content");
 const ctx = canvas.getContext("2d");
 const centerX = 150;
 const centerY = 150;
