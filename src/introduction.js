@@ -8,18 +8,34 @@ close.addEventListener("click", () => {
   menu.classList.remove("move");
 });
 
+/* <육각형 그래프> */
 const canvas = document.getElementById("profile-skills-content");
 const ctx = canvas.getContext("2d");
-const centerX = 150;
-const centerY = 150;
-const radius = 100;
-const sides = 6;
-const data = [0.9, 0.6, 0.9, 0.5, 0.7, 0.4]; // 각 꼭짓점 데이터 (0~1)
 
+// 캔버스 중앙
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+
+const radius = 100; // 육각형 반지름
+const sides = 6;
+const rotation = (90 * Math.PI) / 180; // 90도 회전
+
+// 데이터 값과 라벨 (줄바꿈 가능)
+const data = [0.9, 0.6, 0.9, 0.5, 0.7, 0.4];
+const labels = [
+  ["MS Office"],
+  ["MY SQL"],
+  ["WEB Frontend"],
+  ["Figma"],
+  ["Photoshop"],
+  ["Illustrator"],
+];
+
+// 육각형 그리는 함수
 function drawHexagon(ratio, color, fill = false) {
   ctx.beginPath();
   for (let i = 0; i < sides; i++) {
-    const angle = (Math.PI / 3) * i - Math.PI / 2;
+    const angle = (Math.PI / 3) * i - Math.PI / 2 + rotation;
     const x = centerX + Math.cos(angle) * radius * ratio;
     const y = centerY + Math.sin(angle) * radius * ratio;
     if (i === 0) ctx.moveTo(x, y);
@@ -39,16 +55,45 @@ for (let i = 0.2; i <= 1; i += 0.2) {
   drawHexagon(i, "#ccc");
 }
 
-// 데이터 영역
+// 데이터 영역 + 라벨
 ctx.beginPath();
 data.forEach((value, i) => {
-  const angle = (Math.PI / 3) * i - Math.PI / 2;
+  const angle = (Math.PI / 3) * i - Math.PI / 2 + rotation;
   const x = centerX + Math.cos(angle) * radius * value;
   const y = centerY + Math.sin(angle) * radius * value;
+
   if (i === 0) ctx.moveTo(x, y);
   else ctx.lineTo(x, y);
+
+  // 라벨 위치 (거리 고정 + Figma만 조정)
+  const lineHeight = 18; // 줄 간격
+  labels[i].forEach((line, index) => {
+    let labelDistance = radius + 30; // 기본 거리
+
+    // MS Office만 조금 더 멀리
+    if (line === "MS Office") {
+      labelDistance = radius + 50;
+    }
+
+    // Figma만 조금 더 멀리
+    if (line === "Figma") {
+      labelDistance = radius + 45;
+    }
+
+    const labelX = centerX + Math.cos(angle) * labelDistance;
+    const labelY =
+      centerY + Math.sin(angle) * labelDistance + index * lineHeight;
+
+    ctx.font = "500 16px sans-serif";
+    ctx.fillStyle = "#000";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(line, labelX, labelY);
+  });
 });
 ctx.closePath();
+
+// 데이터 영역 채우기
 ctx.fillStyle = "rgba(248, 147, 226, 0.4)";
 ctx.fill();
 ctx.strokeStyle = "rgba(235, 75, 200, 0.4)";
