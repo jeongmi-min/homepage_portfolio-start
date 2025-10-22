@@ -127,6 +127,20 @@ header {
 }
 
 /* <article-profile-image> */
+#profile-img {
+  margin-bottom: 2em;
+}
+
+#profile-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 1px solid #434343;
+  box-shadow: 0 0 10px rgba(150, 57, 86, 0.5);
+
+  margin-bottom: 2em;
+}
 
 @media (min-width: 1500px) {
   .open-btn,
