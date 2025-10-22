@@ -98,6 +98,15 @@ header {
   color: white;
 }
 
+.menu-a:hover {
+  color: #fddee3;
+}
+
+.menu-click {
+  text-decoration: none;
+  color: #fddee3;
+}
+
 .move {
   transform: translateX(20%);
   transition: 250ms ease;
@@ -193,5 +202,11 @@ header {
   }
   #menubar-button:active {
     color: black;
+  }
+
+  #menubar-button:hover,
+  #menubar-button:active {
+    color: #fff;
+    background: #ffbfcc;
   }
 }

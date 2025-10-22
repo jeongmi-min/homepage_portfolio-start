@@ -99,6 +99,10 @@ header {
   color: white;
 }
 
+.menu-a:hover {
+  color: #fddee3;
+}
+
 .move {
   transform: translateX(20%);
   transition: 250ms ease;
@@ -146,6 +150,10 @@ header {
   transition: background 0.2s;
   pointer-events: auto;
   z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgb(150, 57, 86, 0.5);
 }
 
 #slider-image {
@@ -345,6 +353,10 @@ article {
   z-index: 10;
 }
 
+.marketing-slider-btn:hover {
+  background: rgb(150, 57, 86, 0.5);
+}
+
 /* <markeing-branding> */
 
 #main-branding {
@@ -445,6 +457,10 @@ article {
   transition: background 0.2s;
   pointer-events: auto;
   z-index: 10;
+}
+
+.branding-slider-btn:hover {
+  background: rgb(150, 57, 86, 0.5);
 }
 
 /* <main-web> */
@@ -567,6 +583,10 @@ article {
   transition: background 0.2s;
   pointer-events: auto;
   z-index: 10;
+}
+
+.web-slider-btn:hover {
+  background: rgb(150, 57, 86, 0.5);
 }
 
 /* <main-login> */
@@ -736,8 +756,25 @@ footer {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
   }
+  #menubar-button:link,
+  #menubar-button:visited {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.3em 0.625em;
+    border: none;
+    border-radius: 0.25em;
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+  #menubar-button:hover,
   #menubar-button:active {
-    color: black;
+    color: #fff;
+    background: #ffbfcc;
   }
 
   /* <article-main-profile> */
