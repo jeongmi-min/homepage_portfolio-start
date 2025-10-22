@@ -103,8 +103,9 @@ header {
   color: white;
 }
 
-.menu-a:hover {
-  color: #fddee3;
+.menu-a:hover,
+.menu-click:hover {
+  color: #963956;
 }
 
 .menu-click {
