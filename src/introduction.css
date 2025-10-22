@@ -146,7 +146,7 @@ header {
 }
 
 #profile-image {
-  width: 200px;
+  width: 230px;
   height: 300px;
   object-fit: cover;
   border-radius: 50px;
@@ -154,6 +154,17 @@ header {
   box-shadow: 0 0 10px rgba(150, 57, 86, 0.5);
 
   margin-bottom: 2em;
+}
+
+.desktop-title,
+.desktop-text {
+  display: none;
+}
+
+#profile-img h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
 }
 
 /* <article-profile-text> */
@@ -165,16 +176,12 @@ header {
   align-items: center;
   text-align: center;
 
-  margin-bottom: 5em;
+  margin: 5em auto;
 }
 
-.profile-text h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: black;
-}
 .profile-text p {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: black;
   line-height: 1.5;
 }
@@ -182,7 +189,7 @@ header {
 /* <article-profile-information> */
 .line {
   display: block;
-  margin: 1em auto;
+  margin: 0.8em auto;
 
   width: 6em;
   border-top: 2px solid gray;
@@ -190,7 +197,7 @@ header {
 
 .mini-title {
   color: #963956;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -247,6 +254,7 @@ header {
   margin-bottom: 1rem;
 }
 
+.year,
 .year-info {
   margin-left: 2rem;
 }
@@ -458,9 +466,66 @@ footer {
     background: #ffbfcc;
   }
 
+  /* <article-profile> */
+  .title-profile {
+    font-size: 3rem;
+    margin-bottom: 2.5em;
+  }
+
+  .title-profile::after {
+    width: 12rem;
+  }
+
+  /* <article-profile-img> */
+  #profile-img {
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+  }
+
+  .mobile-title,
+  .mobile-text {
+    display: none;
+  }
+
+  .desktop-title,
+  .desktop-text {
+    display: block;
+    text-align: start;
+  }
+
+  #profile-image {
+    width: 230px;
+  }
+
+  #profile-img h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+  }
+
+  /* <article-profile-text> */
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 5em;
+  }
+  .desktop-text {
+    text-align: center;
+  }
+
   /* <profile-container> */
   .line {
     display: none;
+  }
+
+  .year {
+    margin-left: 0;
   }
 
   #profile-content {
@@ -491,5 +556,6 @@ footer {
   #profile-skills {
     align-items: start;
     text-align: start;
+    margin-bottom: 5em;
   }
 }

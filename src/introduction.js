@@ -21,7 +21,7 @@ const sides = 6;
 const rotation = (90 * Math.PI) / 180; // 90도 회전
 
 // 데이터 값과 라벨 (줄바꿈 가능)
-const data = [0.9, 0.6, 0.9, 0.5, 0.7, 0.4];
+const data = [0.9, 0.8, 0.9, 0.75, 0.9, 0.85];
 const labels = [
   ["MS Office"],
   ["MY SQL"],
@@ -52,7 +52,9 @@ function drawHexagon(ratio, color, fill = false) {
 
 // 육각형 격자 (단계별)
 for (let i = 0.2; i <= 1; i += 0.2) {
-  drawHexagon(i, "#ccc");
+  // i가 1일 때만 진한 색, 나머지는 연한 색
+  const color = i === 1 ? "rgb(150,57,86)" : "rgb(223, 152, 175)";
+  drawHexagon(i, color);
 }
 
 // 데이터 영역 + 라벨
@@ -94,7 +96,7 @@ data.forEach((value, i) => {
 ctx.closePath();
 
 // 데이터 영역 채우기
-ctx.fillStyle = "rgba(248, 147, 226, 0.4)";
+ctx.fillStyle = "rgb(150, 57, 86, 0.4)";
 ctx.fill();
-ctx.strokeStyle = "rgba(235, 75, 200, 0.4)";
+ctx.strokeStyle = "rgb(255, 191, 204, 0)";
 ctx.stroke();
