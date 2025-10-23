@@ -197,3 +197,21 @@ window.addEventListener("keydown", function (e) {
     moveToSlide(current - 1);
   }
 });
+
+// 로그인 시
+document.addEventListener("DOMContentLoaded", function () {
+  const loginButton = document.getElementById("menubar-button");
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (loggedInUser) {
+    loginButton.textContent = loggedInUser;
+    loginButton.href = "#"; // 클릭해도 페이지 이동 안 하도록
+    loginButton.addEventListener("click", function () {
+      if (confirm("로그아웃 하시겠습니까?")) {
+        localStorage.removeItem("loggedInUser");
+        loginButton.textContent = "Login";
+        loginButton.href = "login.html";
+      }
+    });
+  }
+});
