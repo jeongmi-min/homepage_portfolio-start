@@ -639,7 +639,7 @@ article {
   gap: 0.8em;
 }
 
-.login-page-btn {
+#login-page-btn {
   width: 384px;
   height: 40px;
   background: #ffbfcc;
@@ -1102,7 +1102,7 @@ footer {
     gap: 1em;
   }
 
-  .desktop-login-page-btn {
+  #desktop-login-page-btn {
     width: 384px;
     height: 40px;
     background: #ffbfcc;
