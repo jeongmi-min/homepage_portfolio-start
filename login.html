@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite Vanilla Starter</title>
+    <link rel="stylesheet" href="/src/web.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TFSFKZ98BX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TFSFKZ98BX");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="headerbar">
+        <div class="headerbar-logo">
+          <h1 class="logo">
+            <a class="menu-logo" href="index.html">Min's Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="headerbar-menu">
+          <div class="open-btn">&#9776;</div>
+          <nav class="menu">
+            <div class="close-btn">&times;</div>
+            <ul class="menu-ul">
+              <li>
+                <a class="menu-a" href="introduction.html">Introduction</a>
+              </li>
+              <li>
+                <a class="menu-a" href="marketing.html">Marketing plan</a>
+              </li>
+              <li><a class="menu-a" href="branding.html">Branding</a></li>
+              <li><a class="menu-click" href="web.html">WEB</a></li>
+              <li>
+                <a
+                  class="menu-a"
+                  id="menubar-button"
+                  href="login.html"
+                  role="button"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="web-container">
+      <article id="main-web">
+        <h2 class="title-web">WEB Design</h2>
+      </article>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <nav class="footer-menu">
+          <ul class="footer-menu-ul">
+            <li>
+              <a class="footer-menu-a" href="introduction.html">Introduction</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a class="footer-menu-a" href="marketing.html">Marketing plan</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a class="footer-menu-a" href="branding.html">Branding</a>
+            </li>
+            <li>|</li>
+            <li><a class="footer-menu-a" href="web.html">WEB</a></li>
+            <li>|</li>
+            <li><a class="footer-menu-a" href="login.html">Login</a></li>
+          </ul>
+        </nav>
+        <div class="footer-infor-one">
+          <p>Jeongmi Min(閔程美)</p>
+          <p>2001.07.16</p>
+        </div>
+        <div class="footer-infor-two">
+          <p>+82 10.9544.2254</p>
+          <p>jeongmi.min716@gmail.com / jeongmi.min@naver.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/web.js"></script>
+  </body>
+</html>
