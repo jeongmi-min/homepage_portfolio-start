@@ -252,3 +252,42 @@ document.addEventListener("DOMContentLoaded", function () {
     restoreAllButtons();
   }
 });
+
+//로그아웃 상태일 시 접근 제한
+document.addEventListener("DOMContentLoaded", function () {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  // 접근 제한할 링크 (헤더 + 섹션)
+  const restrictedLinks = document.querySelectorAll(
+    ".headerbar-menu .menu-a[href='introduction.html'], \
+     .headerbar-menu .menu-a[href='marketing.html'], \
+     .headerbar-menu .menu-a[href='branding.html'], \
+     .headerbar-menu .menu-a[href='web.html'], \
+     .menu-link[href='introduction.html'], \
+     .menu-link[href='marketing.html'], \
+     .menu-link[href='branding.html'], \
+     .menu-link[href='web.html'], \
+     .footer-menu-a[href='introduction.html'], \
+     .footer-menu-a[href='marketing.html'], \
+     .footer-menu-a[href='branding.html'], \
+     .footer-menu-a[href='web.html'], \
+     .desktop-headerbar-menu .desktop-menu-a[href='introduction.html'], \
+     .desktop-headerbar-menu .desktop-menu-a[href='marketing.html'], \
+     .desktop-headerbar-menu .desktop-menu-a[href='branding.html'], \
+     .desktop-headerbar-menu .desktop-menu-a[href='web.html'], \
+     .footer-desktop-menu-a[href='introduction.html'], \
+     .footer-desktop-menu-a[href='marketing.html'], \
+     .footer-desktop-menu-a[href='branding.html'], \
+     .footer-desktop-menu-a[href='web.html']"
+  );
+
+  restrictedLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      if (!loggedInUser) {
+        e.preventDefault(); // 링크 이동 막기
+        alert("로그인해야 접근할 수 있습니다.");
+        // window.location.href = "login.html"; // 원하면 로그인 페이지로 이동
+      }
+    });
+  });
+});
