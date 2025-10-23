@@ -222,16 +222,14 @@ header {
 
 .signup-btn {
   flex: 1;
-  display: inline-block;
-  text-align: center;
   padding: 0.7em 1em;
   border: 0.1em solid #963956;
   border-radius: 0.5em;
 
-  font-size: 1.1rem;
   color: #963956;
+  font-size: 1.2rem;
   font-weight: 600;
-  text-decoration: none;
+  cursor: pointer;
   transition: 0.3s;
 }
 
