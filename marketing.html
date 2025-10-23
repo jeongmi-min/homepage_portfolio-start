@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite Vanilla Starter</title>
+    <link rel="stylesheet" href="/src/marketing.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TFSFKZ98BX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TFSFKZ98BX");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="headerbar">
+        <div class="headerbar-logo">
+          <h1 class="logo">
+            <a class="menu-logo" href="index.html">Min's Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="headerbar-menu">
+          <div class="open-btn">&#9776;</div>
+          <nav class="menu">
+            <div class="close-btn">&times;</div>
+            <ul class="menu-ul">
+              <li>
+                <a class="menu-a" href="introduction.html">Introduction</a>
+              </li>
+              <li>
+                <a class="menu-click" href="marketing.html">Marketing plan</a>
+              </li>
+              <li><a class="menu-a" href="products.html">Branding</a></li>
+              <li><a class="menu-a" href="contact.html">WEB</a></li>
+              <li>
+                <a
+                  class="menu-a"
+                  id="menubar-button"
+                  href="sign.html"
+                  role="button"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="marketing-container">
+      <article id="main-marketing">
+        <h2 class="title-marketing">Marketing Plan.</h2>
+      </article>
+    </section>
+
+    <section id="marketing-content-text">
+      <article class="marketing-text">
+        <p class="mobile-text">
+          다양한 브랜드의 특성에 맞춘 마케팅 기획안을 창의적으로
+          구상해보았습니다.<br />
+          실현 가능한 전략부터 신선한 아이디어까지, 브랜드의 가치를 높이는
+          실용적이고 참신한 전략을 담았습니다.
+        </p>
+      </article>
+    </section>
+
+    <section id="marketing-content-box">
+      <div class="marketing-grid">
+        <article id="marketing-content-box-one" class="marketing-row">
+          <div class="content-box">
+            <img
+              id="marketing-clio"
+              src="images/marketing-포트폴리오-page5(클리오 기획).png"
+            />
+            <p class="content-box-text">CLIO Planer</p>
+          </div>
+
+          <div class="content-box">
+            <img id="marketing-img" src="" />
+            <p class="content-box-text">----</p>
+          </div>
+
+          <div class="content-box">
+            <img id="marketing-img" src="" />
+            <p class="content-box-text">----</p>
+          </div>
+        </article>
+
+        <article id="marketing-content-box-two" class="marketing-row hidden">
+          <div class="content-box">
+            <img id="marketing-img" src="" />
+            <p class="content-box-text">----</p>
+          </div>
+
+          <div class="content-box">
+            <img id="marketing-img" src="" />
+            <p class="content-box-text">----</p>
+          </div>
+
+          <div class="content-box">
+            <img id="marketing-img" src="" />
+            <p class="content-box-text">----</p>
+          </div>
+        </article>
+      </div>
+
+      <button id="toggle-button">더보기</button>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <nav class="footer-menu">
+          <ul class="footer-menu-ul">
+            <li>
+              <a class="footer-menu-a" href="introduction.html">Introduction</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a class="footer-menu-a" href="brand.html">Marketing plan</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a class="footer-menu-a" href="products.html">Branding</a>
+            </li>
+            <li>|</li>
+            <li><a class="footer-menu-a" href="contact.html">WEB</a></li>
+            <li>|</li>
+            <li><a class="footer-menu-a" href="sign.html">Login</a></li>
+          </ul>
+        </nav>
+        <div class="footer-infor-one">
+          <p>Jeongmi Min(閔程美)</p>
+          <p>2001.07.16</p>
+        </div>
+        <div class="footer-infor-two">
+          <p>+82 10.9544.2254</p>
+          <p>jeongmi.min716@gmail.com / jeongmi.min@naver.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/marketing.js"></script>
+  </body>
+</html>
