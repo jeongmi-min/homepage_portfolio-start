@@ -118,8 +118,8 @@ header {
   transition: 250ms ease;
 }
 
-/* <section-marketing> */
-.title-marketing {
+/* <section-branding> */
+.title-branding {
   color: #000000;
   font-weight: 650;
   font-size: 2.5rem;
@@ -130,20 +130,20 @@ header {
   z-index: 1;
 }
 
-.title-marketing::after {
+.title-branding::after {
   content: "";
   position: absolute;
   top: 45%;
-  left: -3%;
-  width: 20rem;
+  left: -4%;
+  width: 12.5rem;
   height: 0.8em;
   background: #fddee3;
   z-index: -1;
 }
 
-/* <article-marketing-text> */
+/* <article-branding-text> */
 
-.marketing-text {
+.branding-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,15 +153,15 @@ header {
   margin-bottom: 5em;
 }
 
-.marketing-text p {
+.branding-text p {
   font-size: 1.2rem;
   font-weight: 400;
   color: black;
   line-height: 1.5;
 }
 
-/* <marketing-content-box> */
-#marketing-content-box {
+/* <branding-content-box> */
+#branding-content-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,13 +171,13 @@ header {
   margin-bottom: 5em;
 }
 
-.marketing-grid {
+.branding-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.marketing-row {
+.branding-row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,7 +188,7 @@ header {
   margin-bottom: 3em;
 }
 
-#marketing-img {
+#branding-img {
   width: 40em;
   height: 22.5em;
   object-fit: cover;
@@ -328,15 +328,15 @@ footer {
     background: #ffbfcc;
   }
 
-  /* <marketing-content-box> */
-  .marketing-grid {
+  /* <branding-content-box> */
+  .branding-grid {
     display: grid;
     grid-template-rows: auto;
     grid-gap: 3em;
     justify-items: center;
   }
 
-  .marketing-row {
+  .branding-row {
     flex-direction: row;
     justify-content: center;
     margin: 0;
@@ -346,14 +346,14 @@ footer {
     margin: 1.5em;
   }
 
-  #marketing-clio,
-  #marketing-img {
+  #branding-name,
+  #branding-img {
     width: 30em;
     height: 16.875em;
     border-radius: 1em;
   }
 
-  #marketing-content-box-two.hidden {
+  #branding-content-box-two.hidden {
     display: none;
   }
 }
