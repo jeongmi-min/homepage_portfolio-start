@@ -155,7 +155,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  background: #ebebeb;
+  background: #f1f1f1;
   border: none;
   border-radius: 2em;
   width: 80%;
@@ -165,12 +165,12 @@ header {
 }
 
 #login-content-box {
-  background-color: #ffffff;
+  background-color: #f3f3f3;
   padding: 3em 2em;
   border-radius: 1em;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   width: 70%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: start;
 }
 
@@ -191,7 +191,6 @@ header {
   font-size: 1rem;
 }
 
-/* 버튼 컨테이너 */
 .login-buttons {
   display: flex;
   justify-content: space-between;

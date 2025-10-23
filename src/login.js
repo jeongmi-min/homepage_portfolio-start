@@ -8,6 +8,25 @@ close.addEventListener("click", () => {
   menu.classList.remove("move");
 });
 
+// input 태그 편집
+const loginIdInput = document.getElementById("login-id");
+
+loginIdInput.addEventListener("focus", function () {
+  this.placeholder = "";
+});
+
+loginIdInput.addEventListener("blur", function () {
+  if (!this.value) this.placeholder = "아이디를 입력하세요";
+});
+
+const loginPasswordInput = document.getElementById("login-password");
+loginPasswordInput.addEventListener("focus", function () {
+  this.placeholder = "";
+});
+loginPasswordInput.addEventListener("blur", function () {
+  if (!this.value) this.placeholder = "비밀번호를 입력하세요";
+});
+
 /* <로그인 에러 문구> */
 const users = [
   { id: "testuser", password: "1234" },
