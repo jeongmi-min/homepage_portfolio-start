@@ -141,6 +141,99 @@ header {
   z-index: -1;
 }
 
+/* <section-login-content> */
+#login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+}
+
+#login-border-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ebebeb;
+  border: none;
+  border-radius: 2em;
+  width: 80%;
+  padding: 4em 0;
+
+  margin-bottom: 3em;
+}
+
+#login-content-box {
+  background-color: #ffffff;
+  padding: 3em 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  font-size: 1.2rem;
+  text-align: start;
+}
+
+/* <login-content-box> */
+#login-content-box label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #333;
+}
+
+#login-content-box input {
+  width: 100%;
+  padding: 0.7em 1em;
+  margin-bottom: 1.5em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  font-size: 1rem;
+}
+
+/* 버튼 컨테이너 */
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  flex: 1;
+  padding: 0.7em 1em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #963956;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #b2567a;
+}
+
+/* 회원가입 링크 버튼 */
+.signup-btn {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  padding: 0.7em 1em;
+  border: 0.1em solid #963956;
+  border-radius: 0.5em;
+  color: #963956;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #963956;
+  color: #fff;
+}
+
 /* <footer> */
 
 footer {

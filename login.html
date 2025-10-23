@@ -68,7 +68,41 @@
     <section id="login-content">
       <div id="login-border-box">
         <article id="login-content-box">
-          <form></form>
+          <form id="login-form">
+            <!-- 아이디 입력 -->
+            <label for="login-id">ID</label>
+            <input
+              type="text"
+              id="login-id"
+              name="login-id"
+              placeholder="아이디를 입력하세요"
+              required
+            />
+
+            <!-- 비밀번호 입력 -->
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              name="login-password"
+              placeholder="비밀번호를 입력하세요"
+              required
+            />
+
+            <!-- 로그인 버튼 -->
+            <div class="login-buttons">
+              <button type="submit" class="login-btn">Login</button>
+              <a href="/signup" class="signup-btn">Sign up</a>
+            </div>
+
+            <!-- 에러 메시지 -->
+            <p
+              id="login-error"
+              style="color: red; margin-top: 1em; display: none"
+            >
+              * 계정을 찾을 수 없습니다. 회원가입을 해주세요.
+            </p>
+          </form>
         </article>
       </div>
     </section>
