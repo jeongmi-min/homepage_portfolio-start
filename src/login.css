@@ -191,20 +191,23 @@ header {
   font-size: 1rem;
 }
 
+/* <login-buttons> */
 .login-buttons {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   gap: 1em;
 }
 
-/* 로그인 버튼 */
 .login-btn {
   flex: 1;
   padding: 0.7em 1em;
   border: none;
   border-radius: 0.5em;
-  background-color: #963956;
+  background-color: #ffbfcc;
+
   color: #fff;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -214,7 +217,6 @@ header {
   background-color: #b2567a;
 }
 
-/* 회원가입 링크 버튼 */
 .signup-btn {
   flex: 1;
   display: inline-block;
@@ -222,6 +224,8 @@ header {
   padding: 0.7em 1em;
   border: 0.1em solid #963956;
   border-radius: 0.5em;
+
+  font-size: 1.1rem;
   color: #963956;
   font-weight: 600;
   text-decoration: none;
@@ -326,16 +330,13 @@ footer {
     border: none;
     border-radius: 0.25em;
 
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-  }
-  #menubar-button:active {
-    color: black;
+    background-color: #ffbfcc;
+    color: #fff;
   }
 
   #menubar-button:hover,
   #menubar-button:active {
     color: #fff;
-    background: #ffbfcc;
+    background: #963956;
   }
 }

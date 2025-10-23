@@ -326,9 +326,6 @@ footer {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
   }
-  #menubar-button:active {
-    color: black;
-  }
 
   #menubar-button:hover,
   #menubar-button:active {
