@@ -200,18 +200,55 @@ window.addEventListener("keydown", function (e) {
 
 // 로그인 시
 document.addEventListener("DOMContentLoaded", function () {
-  const loginButton = document.getElementById("menubar-button");
+  const buttons = {
+    mobileMenu: document.getElementById("menubar-button"),
+    mobilePage: document.getElementById("login-page-btn"),
+    desktopMenu: document.getElementById("desktop-menubar-button"),
+    desktopPage: document.getElementById("desktop-login-page-btn"),
+    footerDesktop: document.querySelector(
+      ".footer-desktop-menu-a[href='login.html']"
+    ),
+    footerMobile: document.querySelector(".footer-menu-a[href='login.html']"),
+  };
+
   const loggedInUser = localStorage.getItem("loggedInUser");
 
-  if (loggedInUser) {
-    loginButton.textContent = loggedInUser;
-    loginButton.href = "#"; // 클릭해도 페이지 이동 안 하도록
-    loginButton.addEventListener("click", function () {
-      if (confirm("로그아웃 하시겠습니까?")) {
-        localStorage.removeItem("loggedInUser");
-        loginButton.textContent = "Login";
-        loginButton.href = "login.html";
-      }
+  function setLogoutBehavior(button, useUserName = false) {
+    if (!button) return;
+
+    // 텍스트 설정
+    button.textContent = useUserName ? loggedInUser : "Logout";
+    button.href = "#"; // a 기본 링크 막기
+
+    button.onclick = function (event) {
+      event.preventDefault(); // 기본 동작 막기
+
+      const confirmed = confirm("로그아웃 하시겠습니까?");
+      if (!confirmed) return; // ❌ 취소 시 아무 일 없음
+
+      localStorage.removeItem("loggedInUser");
+      restoreAllButtons();
+    };
+  }
+
+  function restoreAllButtons() {
+    Object.values(buttons).forEach((btn) => {
+      if (!btn) return;
+
+      btn.textContent = "Login";
+      btn.href = "login.html";
+      btn.onclick = () => (window.location.href = "login.html");
     });
+  }
+
+  if (loggedInUser) {
+    setLogoutBehavior(buttons.mobileMenu, true); // 모바일 메뉴바 → 사용자 이름
+    setLogoutBehavior(buttons.desktopMenu, true); // 데스크탑 메뉴바 → 사용자 이름
+    setLogoutBehavior(buttons.mobilePage, false); // 모바일 페이지 버튼 → Logout
+    setLogoutBehavior(buttons.desktopPage, false); // 데스크탑 페이지 버튼 → Logout
+    setLogoutBehavior(buttons.footerDesktop, false);
+    setLogoutBehavior(buttons.footerMobile, false);
+  } else {
+    restoreAllButtons();
   }
 });
