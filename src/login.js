@@ -75,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
      .headerbar-menu .menu-a[href='marketing.html'], \
      .headerbar-menu .menu-a[href='branding.html'], \
      .headerbar-menu .menu-a[href='web.html'], \
-     .menu-link[href='introduction.html'], \
-     .menu-link[href='marketing.html'], \
-     .menu-link[href='branding.html'], \
-     .menu-link[href='web.html'], \
      .footer-menu-a[href='introduction.html'], \
      .footer-menu-a[href='marketing.html'], \
      .footer-menu-a[href='branding.html'], \

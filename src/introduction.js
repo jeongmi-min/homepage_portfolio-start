@@ -100,3 +100,48 @@ ctx.fillStyle = "rgb(150, 57, 86, 0.4)";
 ctx.fill();
 ctx.strokeStyle = "rgb(255, 191, 204, 0)";
 ctx.stroke();
+
+// 로그인 시
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = {
+    menubarButton: document.getElementById("menubar-button"),
+    footerLogin: document.querySelector(".footer-menu-a[href='login.html']"),
+  };
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  function setLogoutBehavior(button, useUserName = false) {
+    if (!button) return;
+
+    // 텍스트 설정
+    button.textContent = useUserName ? loggedInUser : "Logout";
+    button.href = "#"; // a 기본 링크 막기
+
+    button.onclick = function (event) {
+      event.preventDefault(); // 기본 동작 막기
+
+      const confirmed = confirm("로그아웃 하시겠습니까?");
+      if (!confirmed) return; // ❌ 취소 시 아무 일 없음
+
+      localStorage.removeItem("loggedInUser");
+      restoreAllButtons();
+    };
+  }
+
+  function restoreAllButtons() {
+    Object.values(buttons).forEach((btn) => {
+      if (!btn) return;
+
+      btn.textContent = "Login";
+      btn.href = "login.html";
+      btn.onclick = () => (window.location.href = "login.html");
+    });
+  }
+
+  if (loggedInUser) {
+    setLogoutBehavior(buttons.menubarButton, true);
+    setLogoutBehavior(buttons.footerLogin, false);
+  } else {
+    restoreAllButtons();
+  }
+});
