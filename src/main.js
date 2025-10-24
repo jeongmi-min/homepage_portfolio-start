@@ -10,10 +10,10 @@ close.addEventListener("click", () => {
 
 // 슬라이더 이미지 배열
 const images = [
-  "images/포트폴리오-page1.png",
-  "images/포트폴리오-page4 최종.png",
-  "images/포트폴리오-page6(민정미)-최종.png",
-  "images/포트폴리오-page30(WEB).png",
+  "images/portfolio-page1.png",
+  "images/portfolio-page4 최종.png",
+  "images/portfolio-page6(민정미)-최종.png",
+  "images/portfolio-page30(WEB).png",
 ];
 let current = 0;
 
