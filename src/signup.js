@@ -9,31 +9,23 @@ close.addEventListener("click", () => {
 });
 
 // input 태그 편집
-const loginIdInput = document.getElementById("login-id");
+const signupIdInput = document.getElementById("signup-id");
 
-loginIdInput.addEventListener("focus", function () {
+signupIdInput.addEventListener("focus", function () {
   this.placeholder = "";
 });
 
-loginIdInput.addEventListener("blur", function () {
+signupIdInput.addEventListener("blur", function () {
   if (!this.value) this.placeholder = "아이디를 입력하세요";
 });
 
-const loginPasswordInput = document.getElementById("login-password");
-loginPasswordInput.addEventListener("focus", function () {
+const signupPasswordInput = document.getElementById("signup-password");
+signupPasswordInput.addEventListener("focus", function () {
   this.placeholder = "";
 });
-loginPasswordInput.addEventListener("blur", function () {
+signupPasswordInput.addEventListener("blur", function () {
   if (!this.value) this.placeholder = "비밀번호를 입력하세요";
 });
-
-//회원가입 버튼
-document
-  .getElementById("signup-button")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // 폼 제출 방지
-    window.location.href = "signup.html"; // signup.html로 이동
-  });
 
 /* <error message> */
 const users = [
@@ -42,8 +34,8 @@ const users = [
   { id: "1234", password: "abcd" },
 ];
 
-const form = document.getElementById("login-form");
-const errorMsg = document.getElementById("login-error");
+const form = document.getElementById("signup-form");
+const errorMsg = document.getElementById("signup-error");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // 페이지 새로고침 방지

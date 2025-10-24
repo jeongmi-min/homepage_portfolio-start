@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite Vanilla Starter</title>
-    <link rel="stylesheet" href="/src/login.css" />
+    <link rel="stylesheet" href="/src/signup.css" />
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -59,45 +59,42 @@
       </div>
     </header>
 
-    <section id="login-container">
-      <article id="main-login">
-        <h2 class="title-login">Login</h2>
+    <section id="signup-container">
+      <article id="main-signup">
+        <h2 class="title-signup">Sign up</h2>
       </article>
     </section>
 
-    <section id="login-content">
-      <div id="login-border-box">
-        <article id="login-content-box">
-          <form id="login-form">
-            <label for="login-id">ID</label>
+    <section id="signup-content">
+      <div id="signup-border-box">
+        <article id="signup-content-box">
+          <form id="signup-form">
+            <label for="signup-id">ID</label>
             <input
               type="text"
-              id="login-id"
-              name="login-id"
-              placeholder="아이디를 입력하세요"
+              id="signup-id"
+              name="signup-id"
+              placeholder="이름을 입력하세요"
               required
             />
 
-            <label for="login-password">Password</label>
+            <label for="signup-password">Password</label>
             <input
               type="password"
-              id="login-password"
-              name="login-password"
-              placeholder="비밀번호를 입력하세요"
+              id="signup-password"
+              name="signup-password"
+              placeholder="이메일을 입력하세요"
               required
             />
 
             <!-- error message -->
-            <p id="login-error" style="color: #963956; display: none">
-              * 계정을 찾을 수 없습니다. 회원가입을 해주세요.<br />
-              (ID: 1234 / PW: abcd)
+            <p id="signup-error" style="color: #963956; display: none">
+              * 모든 입력란에 기입해주세요.
             </p>
 
-            <div class="login-buttons">
-              <button type="submit" class="login-btn">Login</button>
-              <button type="button" class="signup-btn" id="signup-button">
-                Sign up
-              </button>
+            <div class="signup-buttons">
+              <button type="submit" class="reset-btn">Reset</button>
+              <button type="submit" class="signup-btn">Sign up</button>
             </div>
           </form>
         </article>
@@ -136,6 +133,6 @@
       </div>
     </footer>
 
-    <script type="module" src="/src/login.js"></script>
+    <script type="module" src="/src/signup.js"></script>
   </body>
 </html>
