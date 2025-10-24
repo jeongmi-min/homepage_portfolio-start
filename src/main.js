@@ -10,10 +10,10 @@ close.addEventListener("click", () => {
 
 // 슬라이더 이미지 배열
 const images = [
-  "images/portfolio-page1.png",
-  "images/portfolio-page4.png",
-  "images/portfolio-page6(minjeongmi).png",
-  "images/portfolio-page30(WEB).png",
+  "public/images/portfolio-page1.png",
+  "public/images/portfolio-page4.png",
+  "public/images/portfolio-page6(minjeongmi).png",
+  "public/images/portfolio-page30(WEB).png",
 ];
 let current = 0;
 

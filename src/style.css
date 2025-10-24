@@ -1039,21 +1039,21 @@ footer {
   }
 
   #main-content-one {
-    background: url("/images/포트폴리오-page1.png");
+    background: url("../public/images/portfolio-page1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   #main-content-two {
-    background: url("/images/포트폴리오-page4 최종.png");
+    background: url("../public/images/portfolio-page4.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   #main-content-three {
-    background: url("/images/포트폴리오-page6(민정미)-최종.png");
+    background: url("../public/images/portfolio-page6\(minjeongmi\).png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
