@@ -186,10 +186,108 @@ header {
 #signup-content-box input {
   width: 100%;
   padding: 0.7em 1em;
-  margin-bottom: 1.5em;
+
   border: 0.1em solid #ccc;
   border-radius: 0.5em;
   font-size: 1rem;
+}
+
+.signup-form-box {
+  margin-bottom: 1.5em;
+}
+
+/* <아이디, 비번 확인 입력란> */
+#signup-id-box,
+#repassword-box {
+  margin-bottom: 1.5em;
+}
+
+.signup-id-flex,
+.repassword-flex {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.signup-id-flex input,
+.repassword-flex input {
+  flex: 1;
+}
+
+#confirm-id-btn,
+#confirm-password-btn {
+  padding: 0.7em 1.2em;
+  border: 0.1em solid #ffbfcc;
+  border-radius: 0.5em;
+  background-color: #fff;
+  color: #ffbfcc;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#confirm-id-btn:hover,
+#confirm-password-btn:hover {
+  background-color: #ffbfcc;
+  color: #fff;
+}
+
+/* <password 결과 메세지> */
+#id-check-msg,
+#password-check-msg {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* <성별 입력란> */
+.signup-gender-fieldset {
+  border: none;
+  margin-bottom: 1.5em;
+  padding: 0;
+}
+
+.signup-gender-fieldset legend {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.8em;
+  display: block;
+}
+
+.signup-radio-group {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.signup-genderradio-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-genderradio-flex p {
+  margin-left: 0.5em;
+}
+
+.signup-radio-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* <이메일 입력란> */
+.signup-error-msg {
+  font-size: 0.9rem;
+  color: #963956;
+  margin-top: 0.3em;
+}
+
+/* <전화번호 입력란> */
+.signup-error-msg {
+  font-size: 0.9rem;
+  color: #963956;
+  margin-top: 0.3em;
 }
 
 /* <signup-buttons> */

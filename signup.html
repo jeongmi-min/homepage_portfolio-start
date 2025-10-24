@@ -68,24 +68,152 @@
     <section id="signup-content">
       <div id="signup-border-box">
         <article id="signup-content-box">
-          <form id="signup-form">
-            <label for="signup-id">ID</label>
-            <input
-              type="text"
-              id="signup-id"
-              name="signup-id"
-              placeholder="이름을 입력하세요"
-              required
-            />
+          <form id="signup-form" novalidate>
+            <div class="signup-form-box">
+              <label for="signup-name">Name</label>
+              <input
+                type="text"
+                id="signup-name"
+                name="signup-name"
+                placeholder="이름을 입력하세요"
+                required
+              />
+            </div>
 
-            <label for="signup-password">Password</label>
-            <input
-              type="password"
-              id="signup-password"
-              name="signup-password"
-              placeholder="이메일을 입력하세요"
-              required
-            />
+            <div class="signup-form-box">
+              <div id="signup-id-box">
+                <label for="signup-id">ID</label>
+
+                <div class="signup-id-flex">
+                  <input
+                    type="text"
+                    id="signup-id"
+                    name="signup-id"
+                    placeholder="아이디를 입력하세요"
+                    required
+                  />
+                  <button type="button" id="confirm-id-btn">Check ID</button>
+                </div>
+
+                <!-- id 데이터 결과 메시지 -->
+                <p id="id-check-msg"></p>
+              </div>
+            </div>
+
+            <div class="signup-form-box">
+              <label for="signup-password">Password</label>
+              <input
+                type="password"
+                id="signup-password"
+                name="signup-password"
+                placeholder="비밀번호를 입력하세요"
+                required
+              />
+            </div>
+
+            <div class="signup-form-box">
+              <div id="repassword-box">
+                <label for="signup-repassword">Confirm Password</label>
+
+                <div class="repassword-flex">
+                  <input
+                    type="password"
+                    id="signup-repassword"
+                    name="signup-repassword"
+                    placeholder="한 번 더 비밀번호를 입력하세요"
+                    required
+                  />
+                  <button type="button" id="confirm-password-btn">
+                    Confirm
+                  </button>
+                </div>
+
+                <!-- password 결과 메시지 -->
+                <p id="password-check-msg"></p>
+              </div>
+            </div>
+
+            <div class="signup-form-box">
+              <fieldset class="signup-gender-fieldset">
+                <legend>Gender</legend>
+
+                <div class="signup-radio-group">
+                  <div class="signup-genderradio-flex">
+                    <label class="signup-radio">
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        required
+                      />
+                    </label>
+                    <p>Female</p>
+                  </div>
+
+                  <div class="signup-genderradio-flex">
+                    <label class="signup-radio">
+                      <input type="radio" name="gender" value="male" />
+                    </label>
+                    <p>Male</p>
+                  </div>
+
+                  <div class="signup-genderradio-flex">
+                    <label class="signup-radio">
+                      <input type="radio" name="gender" value="other" />
+                    </label>
+                    <p>Other</p>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="signup-form-box">
+              <label for="signup-birth">Birth Date</label>
+              <input
+                type="date"
+                id="signup-birth"
+                name="signup-birth"
+                required
+              />
+            </div>
+
+            <div class="signup-form-box">
+              <label for="signup-email">E-Mail</label>
+              <input
+                type="email"
+                id="signup-email"
+                name="signup-email"
+                placeholder="이메일을 입력하세요"
+                required
+              />
+              <p
+                id="email-error"
+                class="signup-error-msg"
+                style="display: none"
+              >
+                올바른 이메일 형식으로 입력해주세요.
+              </p>
+            </div>
+
+            <div class="signup-form-box">
+              <label for="signup-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="signup-phone"
+                name="signup-phone"
+                placeholder="전화번호를 입력하세요 (예: 01012345678)"
+                pattern="\d{9,11}"
+                title="9~11자리 숫자로 입력해주세요"
+                required
+              />
+              <p
+                id="phone-error"
+                class="signup-error-msg"
+                style="display: none"
+              >
+                올바른 전화번호를 입력해주세요.
+              </p>
+            </div>
 
             <!-- error message -->
             <p id="signup-error" style="color: #963956; display: none">
@@ -95,6 +223,9 @@
             <div class="signup-buttons">
               <button type="submit" class="reset-btn">Reset</button>
               <button type="submit" class="signup-btn">Sign up</button>
+              <p style="color: #963956; font-size: 1rem">
+                * 현재 입력한 데이터는 따로 저장되지 않습니다.
+              </p>
             </div>
           </form>
         </article>

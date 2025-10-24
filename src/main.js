@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function (e) {
       if (!loggedInUser) {
         e.preventDefault(); // 링크 이동 막기
-        alert("로그인해야 접근할 수 있습니다.");
+        alert("로그인 후 이용 가능합니다.");
         // window.location.href = "login.html"; // 원하면 로그인 페이지로 이동
       }
     });
