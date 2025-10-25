@@ -61,10 +61,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function scrollMarketingTo(index) {
     marketingCurrent = (index + marketingTotal) % marketingTotal; // 순환
-    marketingSlides[marketingCurrent].scrollIntoView({
+
+    const slide = marketingSlides[marketingCurrent];
+    const slideRect = slide.getBoundingClientRect();
+    const containerRect = marketingInner.getBoundingClientRect();
+
+    let scrollLeft = slide.offsetLeft; // 슬라이드 시작 위치
+
+    // 마지막 슬라이드일 경우 오른쪽 공백 방지
+    const maxScroll = marketingInner.scrollWidth - marketingInner.clientWidth;
+    if (scrollLeft > maxScroll) scrollLeft = maxScroll;
+
+    marketingInner.scrollTo({
+      left: scrollLeft,
       behavior: "smooth",
-      inline: "start",
-      block: "nearest",
     });
   }
 
@@ -82,24 +92,27 @@ window.addEventListener("DOMContentLoaded", () => {
   const brandingLeftBtn = document.querySelector(".branding-left-btn");
   const brandingRightBtn = document.querySelector(".branding-right-btn");
 
-  let brandingCurrent = 0; // 현재 슬라이드 인덱스
+  let brandingCurrent = 0;
   const brandingTotal = brandingSlides.length;
 
-  // 지정한 인덱스 슬라이드로 이동 (순환)
   function scrollBrandingTo(index) {
-    brandingCurrent = (index + brandingTotal) % brandingTotal; // 순환
-    brandingSlides[brandingCurrent].scrollIntoView({
+    brandingCurrent = (index + brandingTotal) % brandingTotal;
+
+    const slide = brandingSlides[brandingCurrent];
+    let scrollLeft = slide.offsetLeft;
+
+    const maxScroll = brandingInner.scrollWidth - brandingInner.clientWidth;
+    if (scrollLeft > maxScroll) scrollLeft = maxScroll;
+
+    brandingInner.scrollTo({
+      left: scrollLeft,
       behavior: "smooth",
-      inline: "start",
-      block: "nearest",
     });
   }
 
-  // 버튼 이벤트
   brandingLeftBtn.addEventListener("click", () => {
     scrollBrandingTo(brandingCurrent - 1);
   });
-
   brandingRightBtn.addEventListener("click", () => {
     scrollBrandingTo(brandingCurrent + 1);
   });
@@ -115,17 +128,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function scrollToSlide(index) {
     webCurrent = (index + webTotal) % webTotal;
-    webSlides[webCurrent].scrollIntoView({
+
+    const slide = webSlides[webCurrent];
+    let scrollLeft = slide.offsetLeft;
+
+    const maxScroll = webInner.scrollWidth - webInner.clientWidth;
+    if (scrollLeft > maxScroll) scrollLeft = maxScroll;
+
+    webInner.scrollTo({
+      left: scrollLeft,
       behavior: "smooth",
-      inline: "start",
-      block: "nearest",
     });
   }
 
   webLeftBtn.addEventListener("click", () => {
     scrollToSlide(webCurrent - 1);
   });
-
   webRightBtn.addEventListener("click", () => {
     scrollToSlide(webCurrent + 1);
   });
