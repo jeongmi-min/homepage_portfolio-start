@@ -707,7 +707,7 @@ footer {
   display: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 720px) {
   .open-btn,
   .close-btn {
     display: none;
@@ -1170,7 +1170,7 @@ footer {
     margin: 1em;
   }
 
-  @media (min-width: 1450px) {
+  @media (min-width: 1650px) {
     .desktop-open-btn,
     .desktop-close-btn {
       display: none;
